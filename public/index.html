@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>My Record Shelf</title>
+</head>
+
+<body>
+    <h1>⌾ My Record Shelf</h1>
+    
+    <form id ='add-album'>
+        <h3 id = 'addAnAlbum'>Add an album...</h3>
+        <div class="col">
+            <label for="artist">Artist</label><br>
+            <input 
+                type="text" 
+                id="artist" 
+                placeholder="Enter artist name"
+                maxlength=100><br><br>
+        
+            <label for="cover-image">Album Cover</label><br>
+            <input 
+                type="text" 
+                id="cover-image" 
+                placeholder="Paste image URL"><br><br>
+        </div>
+        <div class="col">
+            <label for="title">Album Title</label><br>
+            <input 
+                type="text" 
+                id="title" 
+                placeholder="Enter album title"
+                maxlength=100><br><br>
+            
+            <label for="description">Description</label><br>
+            <input 
+                type="text" 
+                id="description" 
+                placeholder="Enter a description"
+                maxlength=255><br><br>   
+        </div>
+        <div class="col3">
+            <label for="format">Format</label><br>
+            <select name="format" id="format">
+                <option value="LP">LP</option>
+                <option value="2xLP">2xLP</option>
+                <option value="7-inch">7-inch</option>
+                <option value="10-inch">10-inch</option>
+                <option value="Picture Disc">Picture Disc</option>
+                <option value="Box Set">Box Set</option>
+                </select>
+                <br><br>
+            <label for="rating">Rating</label><br>
+            <input 
+                type="number" 
+                id="rating" 
+                min="1" max="10"
+                placeholder="Rating(out of 10)"><br><br>
+            
+            <button id="addbutton">Add Album</button>
+        </div>
+    </form>
+    <br>
+    <section id="albums-container"></section>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

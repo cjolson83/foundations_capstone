@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    width: 100vw;
+}
+
+h1 {    
+    font-size: 80pt;
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+
+#add-album {
+    border: solid 2px black;
+    border-radius: 5px;
+    width: 90vw;
+    line-height: 110%;
+    padding-left: 4%;
+    margin-top: 0%;
+    padding-bottom: 20px;
+}
+
+#addAnAlbum {
+    margin-bottom: 1%;
+    font-size: x-large;
+    padding-bottom: 1%;
+}
+
+input {
+    width: 90%;
+}
+
+.col {
+    float: left;
+    width: 40%
+}
+
+.col3 {
+    float: left;
+    width: 20%
+}
+
+#addbutton {
+    border: solid 2px black;
+    border-radius: 5px;
+    width: 60%;
+    height: 35px;
+    font-weight: bold;
+}
+
+#addbutton:hover {
+    background-color:#989898;
+    transition: 0.4s;
+}
+
+#rating {
+    width: 60%;
+}
+
+#format {
+    width: 60%;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    width: 30vw;
+    margin-bottom: 30px;
+}
+
+.album-card > img {
+    width: 25vw;
+    height: 25vw;
+    border: solid black 1px;
+    border-radius: 3px;
+}
+
+.album-card > h2 {
+    margin: 5px;
+}
+
+.album-card > h3 {
+    margin: 5px;
+}
+
+.album-card > p {
+    margin: 5px;
+    font-size: small;
+}
+
+.btns-container {
+    width: 75%; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#albums-container {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+}
