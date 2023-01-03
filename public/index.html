@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>My Record Shelf</title>
 </head>
 
 <body>
-    <h1>⌾ My Record Shelf</h1>
+    
+    <h1>My Record Shelf   
+    <img id="LP" src="https://i.etsystatic.com/16618524/r/il/23ab82/3598846407/il_1588xN.3598846407_7cdq.jpg" alt="LP image" width="150px" height="150px" class="rotate"></h1>
     
     <form id ='add-album'>
-        <h3 id = 'addAnAlbum'>Add an album...</h3>
+        <button type="button" class="collapsible"></button>
+        <div class ="addForm">
         <div class="col">
             <label for="artist">Artist</label><br>
             <input 
@@ -40,7 +46,7 @@
             <input 
                 type="text" 
                 id="description" 
-                placeholder="Enter a description"
+                placeholder="Enter a brief description (255 char max)"
                 maxlength=255><br><br>   
         </div>
         <div class="col3">
@@ -63,6 +69,7 @@
             
             <button id="addbutton">Add Album</button>
         </div>
+    </div>
     </form>
     <br>
     <section id="albums-container"></section>

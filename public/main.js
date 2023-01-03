@@ -6,6 +6,21 @@ const formatSelect = document.querySelector('select')
 const descriptionInput = document.querySelector('#description')
 let ratingSelect = document.querySelector('#rating')
 let albumsList = document.querySelector('#albums-container')
+var coll = document.getElementsByClassName("collapsible");
+
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
 
 function createAlbum(evt) {
     evt.preventDefault()
@@ -17,6 +32,11 @@ function createAlbum(evt) {
 
       if (titleInput.value < 1) {
         alert ('You must enter a title')
+        return
+    }
+
+    if (descriptionInput.value > 255) {
+        alert ('Description must be 255 characters or less')
         return
     }
 
@@ -48,11 +68,11 @@ function getAllAlbums() {
                     <img src="${elem.imageurl}" alt=" Album Cover">
                     <h2>${elem.artist}</h2>
                     <h3>${elem.title} (${elem.format})</h3>
-                    <p>Description: ${elem.description}</p>
                     <p>Added to collection on ${elem.date}</p>
+                    <p>${elem.description}</p>
                     <div class="btns-container">
                      <button onclick="updateRating(${elem.album_id},'minus')">-</button>
-                     <p class="album-rating" id="album-rating-${elem.album_id}">${elem.rating}</p>
+                     <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>
                      <button onclick="updateRating(${elem.album_id},'plus')">+</button>
                      </div>
                     <button onclick="deleteAlbum(${elem['album_id']})">Delete</button>
@@ -73,7 +93,7 @@ function updateRating(album_id, type) {
 // function getRating()
 
 // let newRating = (id,type)=>{
-//     let albumRating = document.getElementById('album-rating-${elem.album_id}')
+//     let albumRating = document.getElementById(`album-rating-${elem.album_id}`)
 //     if(type === plus){
 //     +albumRating.textContent++}
 //     else{

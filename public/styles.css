@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Lato', sans-serif;
     width: 100vw;
 }
 
@@ -11,22 +11,37 @@ h1 {
     font-size: 80pt;
     margin-top:25px;
     margin-bottom: 25px;
+    padding: 15px;
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+#LP {
+    margin-left: 45px
+}
+
+.rotate {
+    width: 150px;
+    animation: rotation 5s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
 #add-album {
-    border: solid 2px black;
-    border-radius: 5px;
     width: 90vw;
     line-height: 110%;
     padding-left: 4%;
     margin-top: 0%;
-    padding-bottom: 20px;
-}
-
-#addAnAlbum {
-    margin-bottom: 1%;
-    font-size: x-large;
-    padding-bottom: 1%;
 }
 
 input {
@@ -43,21 +58,32 @@ input {
     width: 20%
 }
 
-#addbutton {
-    border: solid 2px black;
+button {
+    border: solid 1.5px black;
     border-radius: 5px;
-    width: 60%;
-    height: 35px;
-    font-weight: bold;
 }
 
-#addbutton:hover {
-    background-color:#989898;
+button:hover {
+    background-color: black;
+    color:white;
     transition: 0.4s;
+}
+
+#addbutton {
+    width: 60%;
+    height: 30px;
+    font-weight: bold;
 }
 
 #rating {
     width: 60%;
+}
+
+.album-rating {
+    margin: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-weight: bold;
 }
 
 #format {
@@ -76,8 +102,9 @@ input {
 .album-card > img {
     width: 25vw;
     height: 25vw;
-    border: solid black 1px;
-    border-radius: 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    filter:drop-shadow(5px 5px 5px black)
 }
 
 .album-card > h2 {
@@ -89,21 +116,63 @@ input {
 }
 
 .album-card > p {
-    margin: 5px;
     font-size: small;
+    width: 25vw;
+    text-align: center;
+    margin: 4px;
 }
 
 .btns-container {
     width: 75%; 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin: 10px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    margin-bottom: 15px;
+    font-weight: bolder;
 }
 
 #albums-container {
     display: grid;
     grid-template-columns: 30vw 30vw 30vw;
 }
+
+.addForm {
+    padding: 0 25px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 30px;
+  }
+
+  .collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: x-large;
+    padding-bottom: 1%;
+    font-family: 'Lato', sans-serif;
+    background-color: white; 
+  }
+
+  .collapsible:hover {
+    background-color: white;
+    color:black;
+}
+
+.collapsible:after {
+    content: '\02795   Add an Album';
+    font-size: x-large;
+    color: black;
+    float: left;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2796   Add an Album";
+  }
+
