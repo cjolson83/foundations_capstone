@@ -50,7 +50,7 @@ function createAlbum(evt) {
         rating: ratingSelect.value
     }
 
-    axios.post('http://localhost:4005/albums', body)
+    axios.post('/albums', body)
         .then(() => {
             form.reset();
             getAllAlbums()
@@ -60,7 +60,7 @@ function createAlbum(evt) {
 function getAllAlbums() {
     albumsList.innerHTML = ''
 
-    axios.get('http://localhost:4005/albums')
+    axios.get('/albums')
         .then(res => {
             console.log(res.data)
             res.data.forEach(elem => {
@@ -85,12 +85,11 @@ function getAllAlbums() {
 }
 
 function updateRating(album_id, type) {
-    axios.put(`http://localhost:4005/albums/${album_id}`, {type})
+    axios.put(`/albums/${album_id}`, {type})
     .then(() => getAllAlbums())
     .catch(err => console.log(err))
 }
-
-// function getRating()
+0
 
 // let newRating = (id,type)=>{
 //     let albumRating = document.getElementById(`album-rating-${elem.album_id}`)
@@ -101,11 +100,9 @@ function updateRating(album_id, type) {
 //     }
 // }
 
-// function getRating(album_id)
-
 
 function deleteAlbum(album_id) {
-    axios.delete(`http://localhost:4005/albums/${album_id}`)
+    axios.delete(`/albums/${album_id}`)
         .then(() => getAllAlbums())
         .catch(err => console.log(err))
 }

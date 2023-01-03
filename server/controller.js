@@ -18,7 +18,7 @@ module.exports = {
         sequelize.query(`
             SELECT album_id, imageURL, artist, title, format, description, date, rating
             FROM albums
-            ORDER BY artist
+            ORDER BY artist, title
         `).then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
