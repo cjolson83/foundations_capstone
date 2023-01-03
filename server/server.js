@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 const {SERVER_PORT} = process.env
 const {getAllAlbums, createAlbum, updateRating, deleteAlbum, seed} = require('./controller.js')
 
