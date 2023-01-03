@@ -58,48 +58,40 @@ function createAlbum(evt) {
 }
 
 function getAllAlbums() {
-    albumsList.innerHTML = ''
-
     axios.get('/albums')
         .then(res => {
             console.log(res.data)
-            res.data.forEach(elem => {
-                let albumCard = `<div class="album-card">
-                    <img src="${elem.imageurl}" alt=" Album Cover">
-                    <h2>${elem.artist}</h2>
-                    <h3>${elem.title} (${elem.format})</h3>
-                    <p>Added to collection on ${elem.date}</p>
-                    <p>${elem.description}</p>
-                    <div class="btns-container">
-                     <button onclick="updateRating(${elem.album_id},'minus')">-</button>
-                     <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>
-                     <button onclick="updateRating(${elem.album_id},'plus')">+</button>
-                     </div>
-                    <button onclick="deleteAlbum(${elem['album_id']})">Delete</button>
-                    </div>
-                `
-
-                albumsList.innerHTML += albumCard
-            })
+            displayAlbums(res.data)
         })
 }
 
 function updateRating(album_id, type) {
     axios.put(`/albums/${album_id}`, {type})
-    .then(() => getAllAlbums())
+    .then(({data}) => displayAlbums(data))
     .catch(err => console.log(err))
 }
-0
 
-// let newRating = (id,type)=>{
-//     let albumRating = document.getElementById(`album-rating-${elem.album_id}`)
-//     if(type === plus){
-//     +albumRating.textContent++}
-//     else{
-//         +albumRating.textContent--
-//     }
-// }
+function displayAlbums(arr) {
+    albumsList.innerHTML = ''
+    arr.forEach(elem => {
+        let albumCard = `<div class="album-card">
+            <img src="${elem.imageurl}" alt=" Album Cover">
+            <h2>${elem.artist}</h2>
+            <h3>${elem.title} (${elem.format})</h3>
+            <p>Added to collection on ${elem.date}</p>
+            <p>${elem.description}</p>
+            <div class="btns-container">
+             <button onclick="updateRating(${elem.album_id},'minus')">-</button>
+             <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>
+             <button onclick="updateRating(${elem.album_id},'plus')">+</button>
+             </div>
+            <button onclick="deleteAlbum(${elem['album_id']})">Delete</button>
+            </div>
+        `
 
+        albumsList.innerHTML += albumCard
+    })
+}
 
 function deleteAlbum(album_id) {
     axios.delete(`/albums/${album_id}`)

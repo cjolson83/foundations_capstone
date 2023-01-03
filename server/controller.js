@@ -40,6 +40,10 @@ module.exports = {
             UPDATE albums
             SET rating = rating - 1
             WHERE album_id = ${id};
+
+            SELECT album_id, imageURL, artist, title, format, description, date, rating
+            FROM albums
+            ORDER BY artist, title;
         `).then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
         } else {
@@ -47,6 +51,10 @@ module.exports = {
             UPDATE albums
             SET rating = rating + 1
             WHERE album_id = ${id};
+
+            SELECT album_id, imageURL, artist, title, format, description, date, rating
+            FROM albums
+            ORDER BY artist, title;
         `).then(dbRes => res.status(200).send(dbRes[0]))
             .catch(err => console.log(err))
         }
