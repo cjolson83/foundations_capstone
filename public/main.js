@@ -3,8 +3,10 @@ const imageURL = document.querySelector('#cover-image')
 const artistInput = document.querySelector('#artist')
 const titleInput = document.querySelector('#title')
 const formatSelect = document.querySelector('select')
-const descriptionInput = document.querySelector('#description')
+const release_yearInput = document.querySelector('#release_year')
+const descriptionInput = document.querySelector("#description")
 let ratingSelect = document.querySelector('#rating')
+const listenurlInput = document.querySelector('#listenurl')
 let albumsList = document.querySelector('#albums-container')
 var coll = document.getElementsByClassName("collapsible");
 
@@ -45,9 +47,11 @@ function createAlbum(evt) {
         artist: artistInput.value, 
         title: titleInput.value,
         format: formatSelect.value,
+        release_year: release_yearInput.value,
         description: descriptionInput.value,
         date: new Date().toJSON().slice(0, 10),
-        rating: ratingSelect.value
+        rating: ratingSelect.value,
+        listenurl: listenurlInput.value
     }
 
     axios.post('/albums', body)
@@ -78,8 +82,12 @@ function displayAlbums(arr) {
             <img src="${elem.imageurl}" alt=" Album Cover">
             <h2>${elem.artist}</h2>
             <h3>${elem.title} (${elem.format})</h3>
+            <h3>${elem.release_year}</h3>
             <p>Added to collection on ${elem.date}</p>
             <p>${elem.description}</p>
+            <div>
+            <button class="listen" onclick=" window.open('${elem.listenurl}','_blank')"> Listen</button>
+            </div>
             <div class="btns-container">
              <button onclick="updateRating(${elem.album_id},'minus')">-</button>
              <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>

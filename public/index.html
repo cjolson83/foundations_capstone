@@ -27,7 +27,14 @@
                 id="artist" 
                 placeholder="Enter artist name"
                 maxlength=100><br><br>
-        
+            
+            <label for="title">Album Title</label><br>
+            <input 
+                type="text" 
+                id="title" 
+                placeholder="Enter album title"
+                maxlength=100><br><br>
+
             <label for="cover-image">Album Cover</label><br>
             <input 
                 type="text" 
@@ -35,19 +42,25 @@
                 placeholder="Paste image URL"><br><br>
         </div>
         <div class="col">
-            <label for="title">Album Title</label><br>
-            <input 
-                type="text" 
-                id="title" 
-                placeholder="Enter album title"
-                maxlength=100><br><br>
             
             <label for="description">Description</label><br>
             <input 
                 type="text" 
                 id="description" 
-                placeholder="Enter a brief description (255 char max)"
-                maxlength=255><br><br>   
+                placeholder="Enter a brief description (400 char max)"
+                maxlength=400><br><br>  
+            <label for="listenurl">Audio URL</label><br>
+            <input 
+                type="url" 
+                id="listenurl" 
+                placeholder="Enter a URL for album listening"
+                maxlength=2083><br><br>
+            <label for="release_year">Year of Release</label><br>
+            <input 
+                type="number" 
+                id="release_year" 
+                min="0000" max="2050"
+                placeholder="Enter the year of original release"><br><br>    
         </div>
         <div class="col3">
             <label for="format">Format</label><br>

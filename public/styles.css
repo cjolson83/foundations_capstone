@@ -82,8 +82,6 @@ button:hover {
 
 .album-rating {
     margin: 15px;
-    margin-left: 25px;
-    margin-right: 25px;
     font-weight: bold;
 }
 
@@ -123,13 +121,16 @@ button:hover {
     margin: 4px;
 }
 
+.listen {
+    margin-top: 20px;
+}
+
 .btns-container {
     width: 75%; 
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    margin-bottom: 15px;
     font-weight: bolder;
 }
 
