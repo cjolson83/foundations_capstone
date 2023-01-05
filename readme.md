@@ -1,0 +1,5 @@
+My Record Shelf allows record collectors to catalog their vinyl collection in a digital space for easy access anywhere in the world. Users can add the albums from their collection to My Record Shelf by adding album artwork, aritst, album title, year of release, a brief description, and a rating. These attributes are displayed on the page in the form of an album card. The main page is constituted of the full collection of your album cards sorted alphabetically and then by year of release.
+
+Once an album is in your collection you can click the 'Listen' button to link to that album on the streaming service of your choice. The +/- buttons on either side of the rating can be used to adjust the album rating. If you get rid of an album from your collection, simply use the delete button to remove it.
+
+My Record Shelf was built using HTML, Javascript, and CSS on the front end. Data requests are handled using Express and Cors, along with Axios get, post, put, and delete requests. The database was created and is handled using SQL.
