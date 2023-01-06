@@ -6,7 +6,6 @@ const formatSelect = document.querySelector('select')
 const release_yearInput = document.querySelector('#release_year')
 const descriptionInput = document.querySelector("#description")
 let ratingSelect = document.querySelector('#rating')
-const listenurlInput = document.querySelector('#listenurl')
 let albumsList = document.querySelector('#albums-container')
 var coll = document.getElementsByClassName("collapsible");
 
@@ -18,7 +17,7 @@ for (i = 0; i < coll.length; i++) {
     if (content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.maxHeight = content.scrollHeight + "25px";
     }
   });
 }
@@ -79,14 +78,13 @@ function displayAlbums(arr) {
     albumsList.innerHTML = ''
     arr.forEach(elem => {
         let albumCard = `<div class="album-card">
-            <img src="${elem.imageurl}" alt=" Album Cover">
+            <a id="albumIMG" href="${elem.listenurl}" target="_blank"><img src="${elem.imageurl}"></a>
             <h2>${elem.artist}</h2>
             <h3>${elem.title} (${elem.format})</h3>
             <h3>${elem.release_year}</h3>
             <p>Added to collection on ${elem.date}</p>
-            <p>${elem.description}</p>
+            <div id="des"><p>${elem.description}</p></div>
             <div>
-            <button class="listen" onclick=" window.open('${elem.listenurl}','_blank')"> Listen</button>
             </div>
             <div class="btns-container">
              <button onclick="updateRating(${elem.album_id},'minus')">-</button>

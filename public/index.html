@@ -20,49 +20,46 @@
     <form id ='add-album'>
         <button type="button" class="collapsible"></button>
         <div class ="addForm">
-        <div class="col">
+            <div class="addField">
             <label for="artist">Artist</label><br>
             <input 
                 type="text" 
                 id="artist" 
                 placeholder="Enter artist name"
-                maxlength=100><br><br>
+                maxlength=100><br></div>
             
+            <div class="addField">    
             <label for="title">Album Title</label><br>
             <input 
                 type="text" 
                 id="title" 
                 placeholder="Enter album title"
-                maxlength=100><br><br>
-
+                maxlength=100><br></div>
+            
+            <div class="addField"> 
+            <label for="release_year">Year of Release</label>
+            <input 
+                type="number" 
+                id="release_year" 
+                min="0000" max="2050"
+                placeholder="Enter year released"><br></div>
+            
+            <div class="addField"> 
             <label for="cover-image">Album Cover</label><br>
             <input 
                 type="text" 
                 id="cover-image" 
-                placeholder="Paste image URL"><br><br>
-        </div>
-        <div class="col">
+                placeholder="Paste image URL"><br></div>
             
+            <div class="addField"> 
             <label for="description">Description</label><br>
             <input 
                 type="text" 
                 id="description" 
                 placeholder="Enter a brief description (400 char max)"
-                maxlength=400><br><br>  
-            <label for="listenurl">Audio URL</label><br>
-            <input 
-                type="url" 
-                id="listenurl" 
-                placeholder="Enter a URL for album listening"
-                maxlength=2083><br><br>
-            <label for="release_year">Year of Release</label><br>
-            <input 
-                type="number" 
-                id="release_year" 
-                min="0000" max="2050"
-                placeholder="Enter the year of original release"><br><br>    
-        </div>
-        <div class="col3">
+                maxlength=400><br></div>
+            
+            <div class="addField"> 
             <label for="format">Format</label><br>
             <select name="format" id="format">
                 <option value="LP">LP</option>
@@ -72,17 +69,27 @@
                 <option value="Picture Disc">Picture Disc</option>
                 <option value="Box Set">Box Set</option>
                 </select>
-                <br><br>
+                <br></div>
+            
+            <div class="addField"> 
+            <label for="listenurl">Audio URL</label><br>
+            <input 
+                type="url" 
+                id="listenurl" 
+                placeholder="Enter a URL for album listening"
+                maxlength=2083><br></div> 
+
+            <div class="addField"> 
             <label for="rating">Rating</label><br>
             <input 
                 type="number" 
                 id="rating" 
                 min="1" max="10"
-                placeholder="Rating(out of 10)"><br><br>
-            
-            <button id="addbutton">Add Album</button>
+                placeholder="Rating(out of 10)"><br></div>
+
+            <div class="addField"> 
+            <button id="addbutton">Add Album</button></div>
         </div>
-    </div>
     </form>
     <br>
     <section id="albums-container"></section>
