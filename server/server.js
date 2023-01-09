@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors')
 const path = require('path')
 const {SERVER_PORT} = process.env
-const {getAllAlbums, createAlbum, updateRating, deleteAlbum, seed} = require('./controller.js')
+const {getAllAlbums, createAlbum, updateRating, deleteAlbum, getSuggestion, seed} = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
@@ -22,12 +22,12 @@ app.get('/js', (req,res) => {
    res.status(200).sendFile(path.join(__dirname, '../public/main.js'))
 })
  
-app.post('/seed', seed)
-
-app.get('/albums', getAllAlbums)
-app.post('/albums', createAlbum)
+app.post('/seed', seed);
+app.get('/albums', getAllAlbums);
+app.post('/albums', createAlbum);
 app.put('/albums/:id', updateRating);
-app.delete('/albums/:id', deleteAlbum)
+app.delete('/albums/:id', deleteAlbum);
+app.get('/suggest', getSuggestion);
 
  
 app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))

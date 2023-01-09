@@ -1,3 +1,4 @@
+const suggestionBtn = document.getElementById('suggestBtn')
 const form = document.querySelector('form')
 const imageURL = document.querySelector('#cover-image')
 const artistInput = document.querySelector('#artist')
@@ -105,6 +106,19 @@ function deleteAlbum(album_id) {
         .catch(err => console.log(err))
 }
 
-getAllAlbums()
+const getSuggestion = () => {
+    axios.get('/suggest')
+        .then(({data}) => displaySuggestion(data))
+        .catch(err => console.log(err))
+}
+
+function displaySuggestion(arr) {
+    alert(`Try putting on ${arr[0].artist} - ${arr[0].title}`)
+}
+
+
 
 form.addEventListener('submit', createAlbum)
+suggestionBtn.addEventListener('click', getSuggestion)
+
+getAllAlbums()

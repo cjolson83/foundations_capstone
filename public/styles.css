@@ -26,7 +26,6 @@ h3 {
     text-align: center;
 }
 
-
 #LP {
     border-radius: 100%;
 }
@@ -73,6 +72,7 @@ button {
     color:black;
     border-radius: 5px;
     border-color: black;
+    font-family: 'Lato', sans-serif;
 }
 
 button:hover {
@@ -98,7 +98,7 @@ button:hover {
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: x-large;
     padding-bottom: 1%;
@@ -115,8 +115,12 @@ button:hover {
     content: '\02795   Add an Album';
     font-size: x-large;
     color: black;
-    float: left;
-    margin-left: 5px;
+    padding-right: 5.1%;
+  }
+
+  .collapsible:after:hover {
+    background-color: black;
+    color: white;
   }
 
   .active:after {
@@ -131,6 +135,12 @@ button:hover {
     position: absolute;
     bottom: 5px;
     left: 0px;
+}
+
+#suggestBtn {
+    font-size: x-large;
+    border: 0;
+    padding: 18px;
 }
 
 .album-card {
