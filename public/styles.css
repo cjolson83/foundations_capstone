@@ -112,7 +112,7 @@ button:hover {
 }
 
 .collapsible:after {
-    content: '\02795   Add an Album';
+    content: 'Add an Album \02795';
     font-size: x-large;
     color: black;
     padding-right: 5.1%;
@@ -124,7 +124,7 @@ button:hover {
   }
 
   .active:after {
-    content: "\2796   Add an Album";
+    content: "Add an Album \2796";
   }
 
 
@@ -139,6 +139,7 @@ button:hover {
 
 #suggestBtn {
     font-size: x-large;
+    font-weight: bold;
     border: 0;
     padding: 18px;
 }
