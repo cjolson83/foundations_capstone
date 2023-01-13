@@ -1,42 +1,61 @@
-require('dotenv').config()
-const Sequelize = require('sequelize')
+require("dotenv").config();
+const Sequelize = require("sequelize");
 
-const {CONNECTION_STRING} = process.env
+const { CONNECTION_STRING } = process.env;
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect:'postgres',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-})
-
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+});
 
 module.exports = {
-    getAllAlbums: (req, res) => {
-        sequelize.query(`
+  getAllAlbums: (req, res) => {
+    sequelize
+      .query(
+        `
             SELECT album_id, imageURL, artist, title, format, release_year, description, date, rating, listenurl
             FROM albums
             ORDER BY artist, release_year, title;
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
-    },
+        `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err));
+  },
 
-    createAlbum: (req, res) => {
-        let {imageURL, artist, title, format, release_year, description, date, rating, listenurl} = req.body
-        sequelize.query(`
+  createAlbum: (req, res) => {
+    let {
+      imageURL,
+      artist,
+      title,
+      format,
+      release_year,
+      description,
+      date,
+      rating,
+      listenurl,
+    } = req.body;
+    sequelize
+      .query(
+        `
         INSERT INTO albums (imageURL, artist, title, format, release_year, description, date, rating, listenurl)
         VALUES ('${imageURL}', '${artist}', '${title}', '${format}', ${release_year},'${description}', '${date}', ${rating}, '${listenurl}');
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
-        },
+        `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err));
+  },
 
-    updateRating: (req, res) => {
-        let { id } = req.params;
-        let { type } = req.body;
-        if (type === 'minus'){
-        sequelize.query(`
+  updateRating: (req, res) => {
+    let { id } = req.params;
+    let { type } = req.body;
+    if (type === "minus") {
+      sequelize
+        .query(
+          `
             UPDATE albums
             SET rating = rating - 1
             WHERE album_id = ${id};
@@ -44,10 +63,14 @@ module.exports = {
             SELECT album_id, imageURL, artist, title, format, release_year, description, date, rating, listenurl
             FROM albums
             ORDER BY artist, release_year, title;
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
-        } else {
-        sequelize.query(`
+        `
+        )
+        .then((dbRes) => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err));
+    } else {
+      sequelize
+        .query(
+          `
             UPDATE albums
             SET rating = rating + 1
             WHERE album_id = ${id};
@@ -55,37 +78,45 @@ module.exports = {
             SELECT album_id, imageURL, artist, title, format, release_year, description, date, rating, listenurl
             FROM albums
             ORDER BY artist, release_year, title;
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-            .catch(err => console.log(err))
-        }
+        `
+        )
+        .then((dbRes) => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err));
+    }
+  },
 
-    },
-    
-    
-    deleteAlbum: (req,res) => {
-        let { id } = req.params
-        sequelize.query(`
+  deleteAlbum: (req, res) => {
+    let { id } = req.params;
+    sequelize
+      .query(
+        `
             DELETE
             FROM albums
             WHERE album_id = ${id};
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
-    },
+        `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err));
+  },
 
-
-    getSuggestion: (req, res) => {
-        sequelize.query(`
+  getSuggestion: (req, res) => {
+    sequelize
+      .query(
+        `
             SELECT artist, title
             FROM albums
             ORDER BY RANDOM()
             LIMIT 1;
-        `).then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
-    },
+        `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err));
+  },
 
-
-    seed: (req, res) => {
-        sequelize.query(`
+  seed: (req, res) => {
+    sequelize
+      .query(
+        `
         drop table if exists albums;
 
         create table albums (
@@ -103,10 +134,12 @@ module.exports = {
         
         insert into albums (imageURL, artist, title, format, release_year, description, date, rating, listenurl)
         values ('https://media.pitchfork.com/photos/5929c55513d197565213bfb6/1:1/w_600/0245d93c.jpg', 'Mulatu Astatke', 'Mulatu Of Ethiopia', 'LP', 1972, 'Ethio Jazz classic', '2022-12-22', 10, 'https://open.spotify.com/album/2FBK03r5TaxQmWMqLuOdF7?si=aVju8OsoSRu15Dk7XWy_Zw');
-        `).then(() => {
-            console.log('DB seeded!')
-            res.sendStatus(200)
-        }).catch(err => console.log('error seeding DB', err))
-    }
-    }
-
+        `
+      )
+      .then(() => {
+        console.log("DB seeded!");
+        res.sendStatus(200);
+      })
+      .catch((err) => console.log("error seeding DB", err));
+  },
+};

@@ -1,292 +1,288 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lato', sans-serif;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  width: 100vw;
 }
 
-h1 {    
-    font-size: 80pt;
-    margin-top:25px;
-    margin-bottom: 25px;
-    padding: 15px;
-    font-family: 'Permanent Marker', cursive;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+h1 {
+  font-size: 80pt;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  font-family: "Permanent Marker", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 h3 {
-    text-align: center;
+  text-align: center;
 }
 
 #LP {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 
 .rotate {
-    width: 150px;
-    animation: rotation 5s infinite linear;
-  }
+  width: 150px;
+  animation: rotation 5s infinite linear;
+}
 
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
-
+  to {
+    transform: rotate(359deg);
+  }
+}
 
 #add-album {
-    width: 90vw;
-    line-height: 110%;
-    margin-top: 0%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 90vw;
+  line-height: 110%;
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .addField {
-    margin-top: 7px;
-    height: 45px;
-    position: relative;
+  margin-top: 7px;
+  height: 45px;
+  position: relative;
 }
 
 input {
-    width: 90%;
-    margin-top: 2px;
+  width: 90%;
+  margin-top: 2px;
 }
 
 #format {
-    width: 93%;
+  width: 93%;
 }
 
 button {
-    background-color: white;
-    color:black;
-    border-radius: 5px;
-    border-color: black;
-    font-family: 'Lato', sans-serif;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-color: black;
+  font-family: "Lato", sans-serif;
 }
 
 button:hover {
-    background-color: black;
-    color:white;
-    transition: 0.4s;
+  background-color: black;
+  color: white;
+  transition: 0.4s;
 }
 
 .addForm {
-    padding: 0 25px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    margin-bottom: 30px;
-    display: grid;
-    grid-template-columns: 35vw 35vw 15vw;
-    height: fit-content;
-  }
+  padding: 0 25px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 35vw 35vw 15vw;
+  height: fit-content;
+}
 
-  .collapsible {
-    cursor: pointer;
-    padding: 18px;
-    width: fit-content;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: x-large;
-    font-weight: bold;
-    padding-bottom: 1%;
-    font-family: 'Lato', sans-serif;
-    background-color: white; 
-  }
+.collapsible {
+  cursor: pointer;
+  padding: 18px;
+  width: fit-content;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: x-large;
+  font-weight: bold;
+  padding-bottom: 1%;
+  font-family: "Lato", sans-serif;
+  background-color: white;
+}
 
-  .collapsible:hover {
-    background-color: white;
-    color:black;
+.collapsible:hover {
+  background-color: white;
+  color: black;
 }
 
 .collapsible:after {
-    content: 'Add an Album +';
-    font-size: 20pt;
-    color: black;
-  }
+  content: "Add an Album +";
+  font-size: 20pt;
+  color: black;
+}
 
-  .collapsible:after:hover {
-    background-color: black;
-    color: white;
-  }
+.collapsible:after:hover {
+  background-color: black;
+  color: white;
+}
 
-  .active:after {
-    content: "Add an Album -";
-    font-weight: bold;
-  }
-
+.active:after {
+  content: "Add an Album -";
+  font-weight: bold;
+}
 
 #addbutton {
-    width: 92%;
-    height: 30px;
-    font-weight: bold;
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
+  width: 92%;
+  height: 30px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
 }
 
 #suggestBtn {
-    font-size: 20pt;
-    font-weight: bold;
-    border: 0;
-    margin: 18px;
-    line-height: 135%;
-    display: flex;
-    align-items: center;
+  font-size: 20pt;
+  font-weight: bold;
+  border: 0;
+  margin: 18px;
+  line-height: 135%;
+  display: flex;
+  align-items: center;
 }
 
 #suggestBtn:hover {
-    background-color: white;
-    color:black;
-    cursor: pointer;
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
 
 .album-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
-    width: 30vw;
-    margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  width: 30vw;
+  margin-bottom: 60px;
 }
 
-#albumIMG > img{
-    width: 25vw;
-    height: 25vw;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    filter:drop-shadow(5px 5px 5px black)
+#albumIMG > img {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  filter: drop-shadow(5px 5px 5px black);
 }
 
-#albumIMG > img:hover{
-    filter:drop-shadow(8px 8px 8px black)
+#albumIMG > img:hover {
+  filter: drop-shadow(8px 8px 8px black);
 }
 
 .album-card > h2 {
-    margin: 5px;
+  margin: 5px;
 }
 
 .album-card > h3 {
-    margin: 5px;
+  margin: 5px;
 }
 
 .album-card > p {
-    font-size: small;
-    width: 25vw;
-    text-align: center;
-    margin: 4px;
+  font-size: small;
+  width: 25vw;
+  text-align: center;
+  margin: 4px;
 }
 
 #des {
-    width: 25vw;
-    height: fit-content;
-    text-align: center;
+  width: 25vw;
+  height: fit-content;
+  text-align: center;
 }
 
 .listen {
-    margin-top: 20px;
-    width: 60px;
-    height: 25px
+  margin-top: 20px;
+  width: 60px;
+  height: 25px;
 }
 
 .album-card > button {
-    width: 60px;
-    height: 25px
+  width: 60px;
+  height: 25px;
 }
 
 .btns-container {
-    width: 75%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    font-weight: bolder;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: bolder;
 }
 
-.btns-container > button{
-   width: 25px;
-   height: 25px
+.btns-container > button {
+  width: 25px;
+  height: 25px;
 }
 
 .album-rating {
-    margin: 15px;
-    font-weight: bold;
+  margin: 15px;
+  font-weight: bold;
 }
 
 #albums-container {
-    display: grid;
-    grid-template-columns: 30vw 30vw 30vw;
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
 }
 
-
-  @media (max-width: 700px) {
-    h1 {
-        font-size: 20vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #LP {
-        margin-left: 0px;
-    }
-
-    .addForm {
-        display: flex;
-        flex-direction: column;
-      }
-    
-    #format {
-        width: 91%;
-    }
-
-    .album-card {
-        width: 90vw;
-    }
-
-    #albums-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #albumIMG > img{
-        width: 80vw;
-        height: 80vw;
-    }
-    
-    .album-card > h2 {
-        margin: 5px;
-    }
-    
-    .album-card > h3 {
-        margin: 5px;
-    }
-    
-    .album-card > p {
-        width: 80vw;
-    }
-
-    #des {
-        width: 80vw;
-    }
-
+@media (max-width: 700px) {
+  h1 {
+    font-size: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
+
+  #LP {
+    margin-left: 0px;
+  }
+
+  .addForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #format {
+    width: 91%;
+  }
+
+  .album-card {
+    width: 90vw;
+  }
+
+  #albums-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #albumIMG > img {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .album-card > h2 {
+    margin: 5px;
+  }
+
+  .album-card > h3 {
+    margin: 5px;
+  }
+
+  .album-card > p {
+    width: 80vw;
+  }
+
+  #des {
+    width: 80vw;
+  }
+}
