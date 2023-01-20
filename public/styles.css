@@ -241,6 +241,10 @@ button:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 90%;
+    font-size: 100px;
   }
 
 
@@ -250,6 +254,9 @@ button:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 70px;
   }
 
   #LP {
