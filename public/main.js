@@ -84,8 +84,6 @@ function displayAlbums(arr) {
             <h3>${elem.release_year}</h3>
             <p>Added to collection on ${elem.date}</p>
             <div id="des"><p>${elem.description}</p></div>
-            <div>
-            </div>
             <div class="btns-container">
              <button onclick="updateRating(${elem.album_id},'minus')">-</button>
              <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>

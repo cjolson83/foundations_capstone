@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  font-size: 80pt;
+  font-size: 110px;
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 15px;
@@ -161,6 +161,7 @@ button:hover {
   align-items: center;
   margin: 5px;
   width: 30vw;
+  height: fit-content;
   margin-bottom: 60px;
 }
 
@@ -189,12 +190,14 @@ button:hover {
   width: 25vw;
   text-align: center;
   margin: 4px;
+  height: fit-content
 }
 
 #des {
   width: 25vw;
-  height: fit-content;
+  height: 150px;
   text-align: center;
+  overflow: scroll;
 }
 
 .listen {
@@ -232,9 +235,17 @@ button:hover {
   grid-template-columns: 30vw 30vw 30vw;
 }
 
+@media (max-width: 1015px) {
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+
 @media (max-width: 700px) {
   h1 {
-    font-size: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,5 +295,6 @@ button:hover {
 
   #des {
     width: 80vw;
+    height: fit-content
   }
 }
