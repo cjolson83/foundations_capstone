@@ -190,7 +190,7 @@ button:hover {
   width: 25vw;
   text-align: center;
   margin: 4px;
-  height: fit-content
+  height: fit-content;
 }
 
 #des {
@@ -246,7 +246,7 @@ button:hover {
     line-height: 90%;
     font-size: 100px;
   }
-
+}
 
 @media (max-width: 700px) {
   h1 {
@@ -302,6 +302,6 @@ button:hover {
 
   #des {
     width: 80vw;
-    height: fit-content
+    height: fit-content;
   }
 }

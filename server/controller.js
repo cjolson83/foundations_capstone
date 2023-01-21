@@ -103,7 +103,7 @@ module.exports = {
     sequelize
       .query(
         `
-            SELECT artist, title
+            SELECT album_id, artist, title
             FROM albums
             ORDER BY RANDOM()
             LIMIT 1;

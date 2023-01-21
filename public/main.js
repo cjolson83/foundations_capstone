@@ -37,8 +37,8 @@ function createAlbum(evt) {
     return;
   }
 
-  if (descriptionInput.value > 255) {
-    alert("Description must be 255 characters or less");
+  if (descriptionInput.value > 400) {
+    alert("Description must be 400 characters or less");
     return;
   }
 
@@ -77,7 +77,7 @@ function updateRating(album_id, type) {
 function displayAlbums(arr) {
   albumsList.innerHTML = "";
   arr.forEach((elem) => {
-    let albumCard = `<div class="album-card">
+    let albumCard = `<div class="album-card" id=${elem.album_id}>
             <a id="albumIMG" href="${elem.listenurl}" target="_blank"><img src="${elem.imageurl}"></a>
             <h2>${elem.artist}</h2>
             <h3>${elem.title} (${elem.format})</h3>
@@ -89,7 +89,7 @@ function displayAlbums(arr) {
              <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>
              <button onclick="updateRating(${elem.album_id},'plus')">+</button>
              </div>
-            <button onclick="deleteAlbum(${elem["album_id"]})">Delete</button>
+            <button onclick="if(confirm('Are you sure you want to delete this album?')) deleteAlbum(${elem["album_id"]})")">Delete</button>
             </div>
         `;
 
@@ -112,7 +112,14 @@ const getSuggestion = () => {
 };
 
 function displaySuggestion(arr) {
-  alert(`Try putting on ${arr[0].artist} - ${arr[0].title}`);
+  return confirm(`Try putting on ${arr[0].artist} - ${arr[0].title}`)
+    ? scrollToCard(arr[0].album_id)
+    : "";
+}
+
+function scrollToCard(album_id) {
+  const element = document.getElementById(album_id);
+  element.scrollIntoView();
 }
 
 form.addEventListener("submit", createAlbum);
