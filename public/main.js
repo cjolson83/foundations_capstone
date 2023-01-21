@@ -80,16 +80,18 @@ function displayAlbums(arr) {
     let albumCard = `<div class="album-card" id=${elem.album_id}>
             <a id="albumIMG" href="${elem.listenurl}" target="_blank"><img src="${elem.imageurl}"></a>
             <h2>${elem.artist}</h2>
-            <h3>${elem.title} (${elem.format})</h3>
-            <h3>${elem.release_year}</h3>
-            <p>Added to collection on ${elem.date}</p>
+            <h3>${elem.title}</h3> 
+            <h4>${elem.release_year} (${elem.format})</h4>
+            <p>Added on ${elem.date}</p>
             <div id="des"><p>${elem.description}</p></div>
+            <div class="bottom-div">
             <div class="btns-container">
              <button onclick="updateRating(${elem.album_id},'minus')">-</button>
              <h3 class="album-rating" id="album-rating-${elem.album_id}">${elem.rating} / 10</h3>
              <button onclick="updateRating(${elem.album_id},'plus')">+</button>
              </div>
             <button onclick="if(confirm('Are you sure you want to delete this album?')) deleteAlbum(${elem["album_id"]})")">Delete</button>
+            </div>
             </div>
         `;
 
