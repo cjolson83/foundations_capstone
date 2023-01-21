@@ -106,6 +106,8 @@ function deleteAlbum(album_id) {
     .catch((err) => console.log(err));
 }
 
+
+
 const getSuggestion = () => {
   axios
     .get("/suggest")
